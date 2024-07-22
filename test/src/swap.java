@@ -1,5 +1,5 @@
 import java.util.*;  
-class swap20
+class swap
 {  
     public static void main(String a[])   
     {   
