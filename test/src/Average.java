@@ -30,5 +30,6 @@ public class Average {
         System.out.println("Max:" +max);
         System.out.println("Min:" +min);
         System.out.println("Average:" +avg);
+        sc.close();
         }
     }
