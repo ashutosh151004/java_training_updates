@@ -1,5 +1,6 @@
 package JframesConcept;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -31,23 +32,35 @@ public class BMI {
         JButton calculate = new JButton("Calculate BMI");
         calculate.setBounds(200,250,150,50);
 
+        //JLabel cacll1 = new JLabel();
+        // calcl1.setBounds(130, 100, 200, 40);
+        JLabel j1 = new JLabel();
+        j1.setBounds(50, 160, 200, 40);
+
         //to click on the button
         calculate.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(userWeighttexField.getText().isEmpty() || userHeightTextField.getText().isEmpty()){
+                    j1.setText("Please enter both values");
+                }
+                else{   
                 float weight = Float.parseFloat(userWeighttexField.getText().toString());
                 float height = Float.parseFloat(userHeightTextField.getText().toString());
                 float value = weight/(height*height);
-
-                calculate.setText(String.valueOf(value));
+                //for Adding color to the BMI Index
+                j1.setBackground(Color.MAGENTA);
+                j1.setForeground(Color.MAGENTA);
+                j1.setText(String.valueOf(value));
                 }
-                });
+    }});
                 //add these objects with frame
                 jframe.add(userWeightLabel);
                 jframe.add(userWeighttexField);
                 jframe.add(userHeightLabel);
                 jframe.add(userHeightTextField);
                 jframe.add(calculate);
+                jframe.add(j1);
 
                 //to use the default layout
                 jframe.setLayout(null);
