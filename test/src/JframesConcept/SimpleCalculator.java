@@ -1,7 +1,7 @@
 package JframesConcept;
 
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class SimpleCalculator {
@@ -45,6 +45,33 @@ public class SimpleCalculator {
                 float num1 = Float.parseFloat(t1.getText().toString());
                 float num2 = Float.parseFloat(t2.getText().toString());
                 float answer = num1+num2;
+                result.setText(String.valueOf(answer));
+            }
+        });
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                float num1 = Float.parseFloat(t1.getText().toString());
+                float num2 = Float.parseFloat(t2.getText().toString());
+                float answer = num1-num2;
+                result.setText(String.valueOf(answer));
+            }
+        });
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                float num1 = Float.parseFloat(t1.getText().toString());
+                float num2 = Float.parseFloat(t2.getText().toString());
+                float answer = num1*num2;
+                result.setText(String.valueOf(answer));
+            }
+        });
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                float num1 = Float.parseFloat(t1.getText().toString());
+                float num2 = Float.parseFloat(t2.getText().toString());
+                float answer = num1/num2;
                 result.setText(String.valueOf(answer));
             }
         });
